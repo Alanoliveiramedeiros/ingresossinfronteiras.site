@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../W42"
+		},
+		{
+			"path": "../../W43"
+		},
+		{
+			"path": "../../W44"
+		},
+		{
+			"path": "../../W45"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "W41"
+	}
+}
