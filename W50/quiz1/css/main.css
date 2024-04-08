@@ -470,8 +470,8 @@ body.started section.quiz {
 body.started.no_images section.quiz {
     /*    height: 540px;*/
     height: auto;
-	padding-top:30px;
-    padding-bottom: 30px;
+	padding-top:10px;
+    padding-bottom: 80px;
 }
 
 section.quiz.started {
