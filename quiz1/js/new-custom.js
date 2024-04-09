@@ -94,10 +94,8 @@
         }
 
         if(!next_step) {
-            window.location = '../';
+            window.location = '../' + window.location.search;
         }
-
-    });
 
     progress_links.on('click', function(e){
         e.preventDefault();
