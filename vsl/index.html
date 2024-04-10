@@ -104,15 +104,42 @@ src="https://www.facebook.com/tr?id=5789698921112005&ev=PageView&noscript=1"
     </script>
 <!-- backredirect !-->
 
+<script>
+  // NEMU
+  function onLoad() {
+    var links = document.getElementsByTagName("a");
+    var trackingParams = [
+      "utm_source",
+      "utm_campaign",
+      "utm_medium",
+      "utm_content",
+      "utm_term",
+      "src",
+      "sck",
+    ];
 
-		<script id="hotmart_launcher_script">
-			(function(l,a,u,n,c,h,e,r){l['HotmartLauncherObject']=c;l[c]=l[c]||function(){
-			(l[c].q=l[c].q||[]).push(arguments)},l[c].l=1*new Date();h=a.createElement(u),
-			e=a.getElementsByTagName(u)[0];h.async=1;h.src=n;e.parentNode.insertBefore(h,e)
-			})(window,document,'script','//launcher.hotmart.com/launcher.js','hot');
+    for (var i = 0, n = links.length; i < n; i++) {
+      if (links[i].href.includes("#")) {
+        continue;
+      }
 
-			hot('account','b5870f87-ac3a-3cfe-9c22-7daf7ae54dea');
-		</script>
+      var link = new URL(links[i].href);
+
+      for (let i = 0; i < trackingParams.length; i++) {
+        link.searchParams.delete(trackingParams[i]);
+      }
+
+      var href =
+        link.href.trim() +
+        (link.href.indexOf("?") > 0 ? "&" : "?") +
+        document.location.search.replace("?", "").toString();
+      links[i].href = href;
+    }
+  }
+
+  setInterval(onLoad, 500);
+</script>
+
 
 
 </head>
